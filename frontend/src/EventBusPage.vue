@@ -43,6 +43,16 @@
 .handler-list {
     background: #fff;
     flex: 1;
+    overflow-y: auto;
+    padding: 0 15px;
+}
+
+.monitored-handler {
+    border-bottom: 1px solid #ededed;
+
+    &:last-child {
+        border-bottom: none;
+    }
 }
 </style>
 
@@ -55,7 +65,7 @@
                     <div class="subtitle">{{ abbreviate(getMetric('handlers').count) }} Registered</div>
                 </div>
                 <div class="handler-list">
-                    <monitored-handler v-for="handler in monitoredHandlers" :key='handler.name' :handler="handler" />
+                    <monitored-handler class="monitored-handler" v-for="handler in monitoredHandlers" :key='handler.name' :handler="handler" />
                 </div>
             </div>
             <div class="col-md-8 charts">
@@ -85,7 +95,9 @@ export default {
         monitoredHandlers() {
             const prefix = 'vertx.eventbus.handlers.';
             const handlers = [];
-            handlers.push({ name: 'All handlers', data: this.getMetric('messages.received') });
+            for (let i = 0; i < 40; ++i) {
+                handlers.push({ name: 'All handlers', data: this.getMetric('messages.received') });
+            }
             for (let [k, v] of Object.entries(this.busMetrics)) {
                 if (k.startsWith(prefix)) {
                     handlers.push({ name: k.substring(prefix.length), data: v });
