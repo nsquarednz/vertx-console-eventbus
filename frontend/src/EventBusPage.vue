@@ -23,7 +23,8 @@
     background-color: #f1f1f1;
     background-image: linear-gradient(to bottom, #fafafa 0, #f5f5f5 100%);
 
-    .title, .subtitle {
+    .title,
+    .subtitle {
         text-shadow: 0px 1px #fcfcfc;
     }
 
@@ -54,7 +55,7 @@
                     <div class="subtitle">{{ abbreviate(getMetric('handlers').count) }} Registered</div>
                 </div>
                 <div class="handler-list">
-    
+                    {{ monitoredHandlers }}
                 </div>
             </div>
             <div class="col-md-8 charts">
@@ -79,16 +80,19 @@ export default {
     computed: {
         monitoredHandlers() {
             const prefix = 'vertx.eventbus.handlers.';
-            const handlers = new Map();
+            const handlers = [];
+            handlers.push({ name: 'All handlers', data: this.getMetric('messages.received') });
             for (let [k, v] of Object.entries(this.busMetrics)) {
                 if (k.startsWith(prefix)) {
-                    handlers.set(k.substring(prefix.length), v);
+                    handlers.push({ name: k.substring(prefix.length), data: v });
                 }
             }
+            console.log(handlers.length);
             return handlers;
         }
     },
     beforeMount() {
+        ''
         const updateData = () => {
             this.$http.get(window.location.pathname + '/busmetrics')
                 .then(response => response.data)
