@@ -23,6 +23,10 @@
     background-color: #f1f1f1;
     background-image: linear-gradient(to bottom, #fafafa 0, #ededed 100%);
 
+    .title, .subtitle {
+        text-shadow: 0px 1px #fafafa;
+    }
+
     .title {
         display: inline;
     }
