@@ -76,6 +76,18 @@ export default {
             loaded: false
         }
     },
+    computed: {
+        monitoredHandlers() {
+            const prefix = 'vertx.eventbus.handlers.';
+            const handlers = new Map();
+            for (let [k, v] of Object.entries(this.busMetrics)) {
+                if (k.startsWith(prefix)) {
+                    handlers.set(k.substring(prefix.length), v);
+                }
+            }
+            return handlers;
+        }
+    },
     beforeMount() {
         const updateData = () => {
             this.$http.get(window.location.pathname + '/busmetrics')
