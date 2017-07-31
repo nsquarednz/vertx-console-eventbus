@@ -21,10 +21,10 @@
     border-bottom: 1px solid #d1d1d1;
     color: #4d5258;
     background-color: #f1f1f1;
-    background-image: linear-gradient(to bottom, #fafafa 0, #ededed 100%);
+    background-image: linear-gradient(to bottom, #fafafa 0, #f5f5f5 100%);
 
     .title, .subtitle {
-        text-shadow: 0px 1px #fafafa;
+        text-shadow: 0px 1px #fcfcfc;
     }
 
     .title {
