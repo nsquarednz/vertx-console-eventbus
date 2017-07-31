@@ -51,11 +51,11 @@
         <div class="row" v-if="loaded">
             <div class="col-md-4 handlers">
                 <div class="header">
-                    <h2 class="title">Handlers</h2>
+                    <h2 class="title">Handler Activity</h2>
                     <div class="subtitle">{{ abbreviate(getMetric('handlers').count) }} Registered</div>
                 </div>
                 <div class="handler-list">
-                    {{ monitoredHandlers }}
+                    <monitored-handler v-for="handler in monitoredHandlers" :key='handler.name' :handler="handler" />
                 </div>
             </div>
             <div class="col-md-8 charts">
@@ -68,9 +68,13 @@
 
 <script>
 import abbreviate from 'number-abbreviate';
+import MonitoredHandler from './MonitoredHandler.vue';
 
 export default {
     name: 'Event Bus',
+    components: {
+        'monitored-handler': MonitoredHandler
+    },
     data() {
         return {
             busMetrics: {},
@@ -87,7 +91,6 @@ export default {
                     handlers.push({ name: k.substring(prefix.length), data: v });
                 }
             }
-            console.log(handlers.length);
             return handlers;
         }
     },
