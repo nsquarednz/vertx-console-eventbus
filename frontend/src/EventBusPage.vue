@@ -10,7 +10,6 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    background: #fff;
     box-shadow: 1px 0 0px #d1d1d1, 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
 
@@ -20,6 +19,9 @@
 .header {
     padding: 17.5px 15px 15px;
     border-bottom: 1px solid #d1d1d1;
+    color: #4d5258;
+    background-color: #f1f1f1;
+    background-image: linear-gradient(to bottom, #fafafa 0, #ededed 100%);
 
     .title {
         display: inline;
@@ -34,6 +36,7 @@
 }
 
 .handler-list {
+    background: #fff;
     flex: 1;
 }
 </style>
