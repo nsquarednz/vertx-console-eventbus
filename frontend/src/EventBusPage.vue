@@ -56,8 +56,8 @@
         <div class="row" v-if="loaded">
             <div class="col-md-4 handlers">
                 <div class="header">
-                    <h2 class="title">Handler Activity</h2>
-                    <div class="subtitle">{{ abbreviate(getMetric('handlers').count) }} Registered</div>
+                    <h2 class="title">Handlers</h2>
+                    <div class="subtitle">{{ abbreviate(getMetric('handlers').count, 1) }} Registered</div>
                 </div>
                 <div class="handler-list">
                     <monitored-handler class="monitored-handler" v-for="handler in monitoredHandlers" :key='handler.name' :handler="handler" />
