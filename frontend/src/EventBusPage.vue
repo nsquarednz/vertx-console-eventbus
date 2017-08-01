@@ -13,9 +13,6 @@
     box-shadow: 1px 0 0px #d1d1d1, 0px 0px 5px rgba(0, 0, 0, 0.25);
 }
 
-
-.charts {}
-
 .header {
     padding: 17.5px 15px 15px;
     border-bottom: 1px solid #d1d1d1;
@@ -49,6 +46,11 @@
         border-bottom: none;
     }
 }
+
+.charts {
+    overflow: auto;
+    white-space: pre;
+}
 </style>
 
 <template>
@@ -63,10 +65,7 @@
                     <monitored-handler class="monitored-handler" v-for="handler in monitoredHandlers" :key='handler.name' :handler="handler" />
                 </div>
             </div>
-            <div class="col-md-8 charts">
-                {{ busMetrics }}
-    
-            </div>
+            <div class="col-md-8 charts">{{ JSON.stringify(busMetrics, null, 4) }}</div>
         </div>
     </div>
 </template>
