@@ -1,6 +1,7 @@
 <style lang="scss" scoped>
 .handler-item {
     padding: 15px 0;
+    display: flex;
 }
 
 .name {
@@ -11,15 +12,52 @@
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.left {
+    display: inline-block;
+}
+
+.right {
+    margin-left: auto;
+    display: flex;
+}
+
+.rate {
+    display: inline;
+    margin-left: 7.5px;
+    text-align: right;
+
+    .value {
+        font-weight: bold;
+    }
+}
 </style>
 
 <template>
     <div class="handler-item">
         <div class="left">
             <div class="name">{{ handler.name }}</div>
-            <div class="received">{{ abbreviate(handler.data.count, 1) }} msgs received</div>
+            <div class="received">{{ abbreviate(handler.data.count, 2) }} msgs received</div>
         </div>
-        {{ handler }}
+        <div class="right">
+            <div class="rate">
+                <div class="period">1 sec</div>
+                <div class="value">{{ abbreviate(oneSecondRate, 1) }}</div>
+            </div>
+            <div class="rate">
+                <div class="period">1 min</div>
+                <div class="value">{{ abbreviate(handler.data.oneMinuteRate.toFixed(2), 2) }}</div>
+            </div>
+            <div class="rate">
+                <div class="period">5 min</div>
+                <div class="value">{{ abbreviate(handler.data.fiveMinuteRate.toFixed(2), 2) }}</div>
+            </div>    
+            <div class="rate">
+                <div class="period">15 min</div>
+                <div class="value">{{ abbreviate(handler.data.fiveMinuteRate.toFixed(2), 2) }}</div>
+            </div>
+
+        </div>
     </div>
 </template>
 

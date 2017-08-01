@@ -56,7 +56,7 @@
 <template>
     <div class="container-fluid eventbus">
         <div class="row" v-if="loaded">
-            <div class="col-md-4 handlers">
+            <div class="col-md-5 handlers">
                 <div class="header">
                     <h2 class="title">Handlers</h2>
                     <div class="subtitle">{{ abbreviate(getMetric('handlers').count, 1) }} Registered</div>
@@ -65,7 +65,7 @@
                     <monitored-handler class="monitored-handler" v-for="handler in monitoredHandlers" :key='handler.name' :handler="handler" />
                 </div>
             </div>
-            <div class="col-md-8 charts">{{ JSON.stringify(busMetrics, null, 4) }}</div>
+            <div class="col-md-7 charts">{{ JSON.stringify(busMetrics, null, 4) }}</div>
         </div>
     </div>
 </template>
