@@ -98,7 +98,9 @@ export default {
         monitoredHandlers() {
             const prefix = 'vertx.eventbus.handlers.';
             const handlers = [];
-            handlers.push({ name: 'All handlers', data: this.getMetric('messages.received') });
+            const receivedMetric = this.getMetric('messages.received');
+            receivedMetric.pending = this.getMetric('messages.pending').count;
+            handlers.push({ name: 'All handlers', data: receivedMetric });
             for (let [k, v] of Object.entries(this.busMetrics)) {
                 if (k.startsWith(prefix)) {
                     handlers.push({ name: k.substring(prefix.length), data: v });

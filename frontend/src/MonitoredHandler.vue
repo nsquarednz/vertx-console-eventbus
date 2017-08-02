@@ -53,7 +53,7 @@
     <div class="handler-item">
         <div class="left">
             <div class="name">{{ handler.name }}</div>
-            <div class="received">{{ abbreviate(handler.data.count, 2) }} msgs received</div>
+            <div class="received">{{ abbreviate(handler.data.count, 2) }} received{{ handler.data.pending === undefined ? '' : `, ${abbreviate(handler.data.pending, 2)} pending` }}</div>
         </div>
         <div class="right">
             <div class="rate s-1">
