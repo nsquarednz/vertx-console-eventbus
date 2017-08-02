@@ -100,7 +100,7 @@ export default {
             const handlers = [];
             const receivedMetric = this.getMetric('messages.received');
             receivedMetric.pending = this.getMetric('messages.pending').count;
-            handlers.push({ name: 'All handlers', data: receivedMetric });
+            handlers.push({ name: 'All addresses', data: receivedMetric });
             for (let [k, v] of Object.entries(this.busMetrics)) {
                 if (k.startsWith(prefix)) {
                     handlers.push({ name: k.substring(prefix.length), data: v });
