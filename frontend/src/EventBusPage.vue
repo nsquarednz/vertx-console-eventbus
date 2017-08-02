@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="col-md-8 charts">
-                <charts :busMetrics="busMetrics" />
+                <charts :busMetrics="busMetrics" :getMetric="getMetric"/>
             </div>
         </div>
     </div>
@@ -141,7 +141,7 @@ export default {
     methods: {
         getMetric(name) {
             return this.busMetrics['vertx.eventbus.' + name];
-        },
+        }
     }
 }
 </script>
