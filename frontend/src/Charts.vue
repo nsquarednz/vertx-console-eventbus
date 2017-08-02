@@ -1,6 +1,6 @@
 <style lang="scss" scoped>
 .multiline {
-    padding: 20px;
+    padding: 20px 20px 20px 5px;
 }
 </style>
 
@@ -8,20 +8,27 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <div class="card-pf multiline">
+                <div class="card-pf">
                     <pf-multi-line :height="288" :data="publishRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card-pf multiline">
-                    <pf-multi-line :height="288" :data="sentRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card-pf multiline">
+                <div class="card-pf">
                     <pf-multi-line :height="288" :data="deliveredRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="card-pf">
+                    <pf-multi-line :height="288" :data="deliveredRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
+                </div>
+            </div>
+    
+            <div class="col-md-6">
+                <div class="card-pf">    
+                    <pf-multi-line :height="288" :data="deliveredRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
+                </div>
+            </div>
+    
         </div>
     </div>
 </template>
