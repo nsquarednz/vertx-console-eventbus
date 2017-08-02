@@ -73,7 +73,9 @@
                     <monitored-handler class="monitored-handler" v-for="handler in filteredHandlers" :key='handler.name' :handler="handler" />
                 </div>
             </div>
-            <div class="col-md-8 charts">{{ JSON.stringify(busMetrics, null, 4) }}</div>
+            <div class="col-md-8 charts">
+                <charts :busMetrics="busMetrics" />
+            </div>
         </div>
     </div>
 </template>
@@ -81,11 +83,13 @@
 <script>
 import abbreviate from 'number-abbreviate';
 import MonitoredHandler from './MonitoredHandler.vue';
+import Charts from './Charts.vue';
 
 export default {
     name: 'Event Bus',
     components: {
-        'monitored-handler': MonitoredHandler
+        'monitored-handler': MonitoredHandler,
+        'charts': Charts
     },
     data() {
         return {
