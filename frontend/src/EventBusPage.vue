@@ -54,7 +54,6 @@
 
 .charts {
     overflow: auto;
-    white-space: pre;
 }
 </style>
 
