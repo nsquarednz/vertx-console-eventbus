@@ -22,22 +22,22 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card-pf multiline">
-                    <div class="rate-title">Receive rate</div>
-                    <div class="rate-subtitle">{{ abbreviate(getMetric('messages.received').oneSecondRate, 2) }}/sec</div>
-                    <pf-multi-line :height="250" :data="receivedRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card-pf multiline">
                     <div class="rate-title">Publish rate</div>
-                    <div class="rate-subtitle">{{ abbreviate(getMetric('messages.published').oneSecondRate, 2) }}/sec</div>
+                    <div class="rate-subtitle">{{ abbreviate(getMetric('messages.published').oneSecondRate, 2) }} msgs/sec</div>
                     <pf-multi-line :height="250" :data="publishRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card-pf multiline">
+                    <div class="rate-title">Send rate</div>
+                    <div class="rate-subtitle">{{ abbreviate(getMetric('messages.sent').oneSecondRate, 2) }} msgs/sec</div>
+                    <pf-multi-line :height="250" :data="sentRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
+                </div>
+            </div>    
+            <div class="col-md-6">
+                <div class="card-pf multiline">
                     <div class="rate-title">Delivery rate</div>
-                    <div class="rate-subtitle">{{ abbreviate(getMetric('messages.delivered').oneSecondRate, 2) }}/sec</div>    
+                    <div class="rate-subtitle">{{ abbreviate(getMetric('messages.delivered').oneSecondRate, 2) }} msgs/sec</div>
                     <pf-multi-line :height="250" :data="deliveredRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
                 </div>
             </div>
@@ -63,8 +63,8 @@ export default {
         this.abbreviate = abbreviate;
     },
     computed: {
-        receivedRate() {
-            return this.getThroughputMeterC3Data('messages.received');
+        sentRate() {
+            return this.getThroughputMeterC3Data('messages.sent');
         },
         publishRate() {
             return this.getThroughputMeterC3Data('messages.published');
