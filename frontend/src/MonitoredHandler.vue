@@ -25,10 +25,26 @@
 .rate {
     display: inline;
     margin-left: 7.5px;
-    text-align: right;
+    text-align: center;
 
     .value {
         font-weight: bold;
+    }
+
+    &.s-1 {
+        color: #00659c;
+    }
+
+    &.m-1 {
+        color: #0088ce;
+    }
+
+    &.m-5 {
+        color: #39a5dc;
+    }
+
+    &.m-15 {
+        color: #7dc3e8;
     }
 }
 </style>
@@ -40,20 +56,20 @@
             <div class="received">{{ abbreviate(handler.data.count, 2) }} msgs received</div>
         </div>
         <div class="right">
-            <div class="rate">
-                <div class="period">1 sec</div>
-                <div class="value">{{ abbreviate(oneSecondRate, 1) }}</div>
+            <div class="rate s-1">
+                <div class="period">Rate</div>
+                <div class="value">{{ abbreviate(oneSecondRate, 1) }}/s</div>
             </div>
-            <div class="rate">
-                <div class="period">1 min</div>
+            <div class="rate m-1">
+                <div class="period">1m</div>
                 <div class="value">{{ abbreviate(handler.data.oneMinuteRate.toFixed(2), 2) }}</div>
             </div>
-            <div class="rate">
-                <div class="period">5 min</div>
+            <div class="rate m-5">
+                <div class="period">5m</div>
                 <div class="value">{{ abbreviate(handler.data.fiveMinuteRate.toFixed(2), 2) }}</div>
             </div>    
-            <div class="rate">
-                <div class="period">15 min</div>
+            <div class="rate m-15">
+                <div class="period">15m</div>
                 <div class="value">{{ abbreviate(handler.data.fiveMinuteRate.toFixed(2), 2) }}</div>
             </div>
 
