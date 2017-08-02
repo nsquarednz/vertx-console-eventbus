@@ -54,6 +54,8 @@
 
 .charts {
     overflow: auto;
+    padding: 10px;
+    padding-top: 20px;
 }
 </style>
 
