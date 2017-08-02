@@ -44,7 +44,7 @@
     }
 
     &.m-15 {
-        color: #7dc3e8;
+        color: #3f9c35;
     }
 }
 </style>
