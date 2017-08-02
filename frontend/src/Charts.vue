@@ -1,11 +1,11 @@
 <style lang="scss" scoped>
 .multiline {
-    padding: 10px 20px 20px 5px;
+    padding: 15px 20px 20px 5px;
 }
 
 .rate-title {
     font-size: 16px;
-    padding: 0px 10px 5px;
+    padding: 0px 10px 10px;
 }
 </style>
 
@@ -15,25 +15,25 @@
             <div class="col-md-6">
                 <div class="card-pf multiline">
                     <div class="rate-title">Messages Received</div>
-                    <pf-multi-line :height="288" :data="receivedRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
+                    <pf-multi-line :height="250" :data="receivedRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card-pf multiline">
                     <div class="rate-title">Messages Published</div>
-                    <pf-multi-line :height="288" :data="publishRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
+                    <pf-multi-line :height="250" :data="publishRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card-pf multiline">
                     <div class="rate-title">Messages Delivered</div>
-                    <pf-multi-line :height="288" :data="deliveredRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
+                    <pf-multi-line :height="250" :data="deliveredRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card-pf multiline">
                     <div class="rate-title">Reply Failures</div>
-                    <pf-multi-line :height="288" :data="replyFailuresRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
+                    <pf-multi-line :height="250" :data="replyFailuresRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
                 </div>
             </div>
         </div>
