@@ -14,7 +14,7 @@
 }
 
 .header {
-    padding: 17.5px 15px 15px;
+    padding: 10px 20px;
     border-bottom: 1px solid #d1d1d1;
     color: #4d5258;
     background-color: #f1f1f1;
@@ -28,7 +28,7 @@
         font-weight: bold;
         text-transform: uppercase;
         float: right;
-        line-height: 24.2px;
+        line-height: 26px;
     }
 }
 
