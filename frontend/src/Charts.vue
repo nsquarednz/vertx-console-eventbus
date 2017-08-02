@@ -14,25 +14,25 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card-pf multiline">
-                    <div class="rate-title">Messages Received</div>
+                    <div class="rate-title">Messages received/sec</div>
                     <pf-multi-line :height="250" :data="receivedRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card-pf multiline">
-                    <div class="rate-title">Messages Published</div>
+                    <div class="rate-title">Messages published/sec</div>
                     <pf-multi-line :height="250" :data="publishRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card-pf multiline">
-                    <div class="rate-title">Messages Delivered</div>
+                    <div class="rate-title">Messages delivered/sec</div>
                     <pf-multi-line :height="250" :data="deliveredRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="card-pf multiline">
-                    <div class="rate-title">Reply Failures</div>
+                    <div class="rate-title">Reply failures/sec</div>
                     <pf-multi-line :height="250" :data="replyFailuresRate" chartType="area" :maxDisplayed="10" :extraChartOptions="{color: { pattern: ['#a30000', '#ec7a08', '#f0ab00'] } }"></pf-multi-line>
                 </div>
             </div>
