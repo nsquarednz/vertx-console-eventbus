@@ -67,7 +67,7 @@
                         <label for="filter" class="sr-only">Filter</label>
                         <input type="text" id="filter" class="form-control" placeholder="Filter" v-model="filterQuery">
                     </div>
-                    <div class="subtitle">{{ abbreviate(getMetric('handlers').count, 1) }} Registered</div>
+                    <div class="subtitle">{{ abbreviate(getMetric('handlers').count, 1) }} {{ getMetric('handlers').count === 1 ? 'Handler' : 'Handlers' }}</div>
                 </div>
                 <div class="handler-list">
                     <monitored-handler class="monitored-handler" v-for="handler in filteredHandlers" :key='handler.name' :handler="handler" />
@@ -115,7 +115,6 @@ export default {
         }
     },
     beforeMount() {
-        ''
         const updateData = () => {
             this.$http.get(window.location.pathname + '/busmetrics')
                 .then(response => response.data)
@@ -136,7 +135,7 @@ export default {
     methods: {
         getMetric(name) {
             return this.busMetrics['vertx.eventbus.' + name];
-        }
+        },
     }
 }
 </script>
