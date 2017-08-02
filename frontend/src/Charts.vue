@@ -33,7 +33,7 @@
             <div class="col-md-6">
                 <div class="card-pf multiline">
                     <div class="rate-title">Reply Failures</div>
-                    <pf-multi-line :height="250" :data="replyFailuresRate" chartType="area" :maxDisplayed="10"></pf-multi-line>
+                    <pf-multi-line :height="250" :data="replyFailuresRate" chartType="area" :maxDisplayed="10" :extraChartOptions="{color: { pattern: ['#a30000', '#ec7a08', '#f0ab00'] } }"></pf-multi-line>
                 </div>
             </div>
         </div>
