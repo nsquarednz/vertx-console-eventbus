@@ -13,11 +13,17 @@ public class EventBusConsolePage implements ConsolePage {
 
     private final MetricsService metricsService;
 
+    /**
+     * Creates the event bus console page, using the provided metrics service
+     *
+     * @param metricsService the metrics service to retrieve data from
+     * @return the console page
+     */
     public static EventBusConsolePage create(MetricsService metricsService) {
         return new EventBusConsolePage(metricsService);
     }
 
-    public EventBusConsolePage(MetricsService metricsService) {
+    private EventBusConsolePage(MetricsService metricsService) {
         this.metricsService = metricsService;
     }
 
